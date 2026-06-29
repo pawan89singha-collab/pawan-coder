@@ -1,42 +1,17 @@
 
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-    <meta charset="UTF-8">
-    <title>My Website</title>
-    <!-- यह लाइन आपकी CSS फाइल (style.css) को यहाँ जोड़ेगी -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* यह स्टाइल सभी स्क्रीन्स पर लागू होगी (डेस्कटॉप फर्स्ट) */
+body {
+  font-size: 18px;
+  background-color: white;
+}
 
-    <header>
-        <h2>My Logo</h2>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <div class="hero">
-        <h1>Welcome to My Website</h1>
-        <button class="btn">Click Me</button>
-    </div>
-
-    <div class="services-section">
-        <h2>Our Services</h2>
-        <div class="services-container">
-            <div class="card">Service 1</div>
-            <div class="card">Service 2</div>
-            <div class="card">Service 3</div>
-        </div>
-    </div>
-
-    <footer>
-        <p>© 2026 All Rights Reserved</p>
-    </footer>
-
-</body>
-</html>
+/* जब स्क्रीन 768px या उससे छोटी होगी (मोबाइल/टैबलेट के लिए) */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px; /* मोबाइल पर फॉन्ट थोड़ा छोटा */
+  }
+  
+  .sidebar {
+    display: none; /* मोबाइल पर साइडबार छुपाना हो तो */
+  }
+}
