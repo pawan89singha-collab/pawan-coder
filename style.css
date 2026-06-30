@@ -1,4 +1,233 @@
-/* बेसिक रीसेट */
+/* बेसिक रीसेट और प्रीमियम फॉन्ट */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* हेडर और नेविगेशन (ग्लास इफ़ेक्ट के साथ) */
+header {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2d3436;
+}
+
+.logo span {
+    color: #6c5ce7; /* प्रीमियम पर्पल कलर */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #636e72;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #6c5ce7;
+}
+
+.cta-btn {
+    background-color: #6c5ce7;
+    color: white;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #5b4cc4;
+    transform: translateY(-2px);
+}
+
+/* मॉडर्न हीरो सेक्शन (आधुनिक ग्रैडिएंट) */
+.hero {
+    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+    color: white;
+    text-align: center;
+    padding: 140px 20px;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #ffffff;
+    color: #6c5ce7;
+}
+
+.btn-primary:hover {
+    background-color: #f1f1f1;
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    color: #6c5ce7;
+    transform: translateY(-3px);
+}
+
+/* प्रीमियम सर्विस और कार्ड्स सेक्शन */
+.services-section {
+    padding: 90px 8%;
+    text-align: center;
+}
+
+.section-title {
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: #2d3436;
+    margin-bottom: 15px;
+}
+
+.section-title p {
+    color: #777;
+    font-size: 1.1rem;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1xl));
+    gap: 30px;
+    justify-content: center;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 40px 30px;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #edf2f7;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(108, 92, 231, 0.15);
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    color: #2d3436;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #636e72;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.card-link {
+    color: #6c5ce7;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* फुटर */
+footer {
+    background-color: #2d3436;
+    color: #b2bec3;
+    text-align: center;
+    padding: 30px;
+    font-size: 0.95rem;
+}
+
+/* मोबाइल रिस्पॉन्सिवनेस */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 5%;
+        flex-direction: column;
+        gap: 15px;
+    }
+    nav ul {
+        margin-bottom: 10px;
+    }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn {
+        width: 80%;
+    }
+}/* बेसिक रीसेट */
 * {
     margin: 0;
     padding: 0;
