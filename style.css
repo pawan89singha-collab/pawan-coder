@@ -1,6 +1,4 @@
-/* Google Fonts Import for modern look */
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Poppins:wght@400;600&display=swap');
-
+/* सभी मार्जिन और पैडिंग को रीसेट करने के लिए */
 * {
     margin: 0;
     padding: 0;
@@ -8,15 +6,13 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     color: #333;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
-/* Header & Navigation */
+/* Header & Navigation Bar */
 header {
     background-color: #ff4757;
     color: white;
@@ -29,12 +25,12 @@ header {
 
 .logo {
     font-size: 24px;
-    font-weight: 600;
+    font-weight: bold;
 }
 
 nav ul {
-    display: flex;
     list-style: none;
+    display: flex;
 }
 
 nav ul li {
@@ -50,42 +46,45 @@ nav ul li a {
     transition: all 0.3s ease;
 }
 
-nav ul li a:hover, nav ul li a.active {
+nav ul li a:hover {
     background-color: white;
     color: #ff4757;
 }
 
-/* Hero Content */
+/* Hero Content Section */
 .hero {
     text-align: center;
-    padding: 100px 20px;
-    flex: 1;
+    padding: 80px 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 h1 {
-    font-family: 'Comic Neue', cursive;
     font-size: 3.5rem;
     color: #2f3542;
     margin-bottom: 20px;
 }
 
 .subtitle {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-bottom: 40px;
     color: #57606f;
 }
 
+/* Funny Call to Action Box */
 .cta-box {
     background: white;
     display: inline-block;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
 }
 
 .cta-box h3 {
     margin-bottom: 20px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    color: #2f3542;
 }
 
 /* Funny Button */
@@ -98,50 +97,48 @@ h1 {
     font-weight: bold;
     border-radius: 50px;
     cursor: pointer;
-    transition: transform 0.2s, background-color 0.2s;
+    transition: all 0.2s ease;
 }
 
 .funny-btn:hover {
-    transform: scale(1.1) rotate(2deg);
     background-color: #26af5f;
+    box-shadow: 0 5px 15px rgba(46, 213, 115, 0.4);
+    transform: scale(1.05);
 }
 
-/* About Page Styles */
-.about-section {
-    text-align: center;
-    padding: 60px 20px;
-    flex: 1;
-    max-width: 800px;
+/* Cards Section (About the Team) */
+.team-section {
+    max-width: 900px;
     margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
 }
 
-.about-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+.team-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #2f3542;
 }
 
-.team-container {
+.card-container {
     display: flex;
-    justify-content: space-around;
-    margin: 40px 0;
+    justify-content: space-between;
     gap: 20px;
 }
 
 .card {
+    flex: 1;
     background: white;
-    padding: 20px;
+    padding: 25px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    flex: 1;
     border-top: 5px solid #ffa502;
+    text-align: left;
 }
 
-.back-btn {
-    display: inline-block;
-    margin-top: 30px;
+.card h3 {
+    margin-bottom: 10px;
     color: #ff4757;
-    text-decoration: none;
-    font-weight: bold;
 }
 
 /* Footer */
@@ -149,6 +146,7 @@ footer {
     background-color: #2f3542;
     color: white;
     text-align: center;
-    padding: 15px;
+    padding: 20px;
     font-size: 0.9rem;
+    margin-top: 60px;
 }
