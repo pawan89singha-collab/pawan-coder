@@ -1,230 +1,154 @@
-
-    
-/* ==========================================================================
-   1. VARIABLES & RESET (मॉडर्न कलर स्कीम और रीसेट)
-   ========================================================================== */
-:root {
-    --primary-color: #2563eb;    /* मॉडर्न ब्लू */
-    --secondary-color: #3b82f6;  /* लाइट ब्लू */
-    --bg-dark: #0f172a;          /* डार्क बैकग्राउंड (HTML बॉडी के लिए) */
-    --bg-card: #1e293b;          /* कार्ड्स के लिए */
-    --text-main: #f8fafc;         /* मुख्य टेक्स्ट */
-    --text-muted: #94a3b8;        /* हल्का टेक्स्ट */
-    --accent: #10b981;            /* सक्सेस/एक्सेन्ट ग्रीन */
-    --transition-fast: all 0.3s ease;
-}
+/* Google Fonts Import for modern look */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Poppins:wght@400;600&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-main);
-    line-height: 1.6;
-    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* ==========================================================================
-   2. NAVIGATION BAR (नेविगेशन)
-   ========================================================================== */
-.navbar {
+/* Header & Navigation */
+header {
+    background-color: #ff4757;
+    color: white;
+    padding: 20px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 10%;
-    background-color: rgba(15, 23, 42, 0.9);
-    backdrop-filter: blur(10px);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    text-decoration: none;
+    font-size: 24px;
+    font-weight: 600;
 }
 
-.nav-links {
+nav ul {
     display: flex;
     list-style: none;
-    gap: 2rem;
 }
 
-.nav-links a {
-    color: var(--text-muted);
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
     text-decoration: none;
-    font-weight: 500;
-    transition: var(--transition-fast);
-}
-
-.nav-links a:hover, .nav-links a.active {
-    color: var(--text-main);
-    text-shadow: 0 0 10px rgba(37, 99, 61, 0.5);
-}
-
-/* ==========================================================================
-   3. HERO SECTION (मुख्य बैनर)
-   ========================================================================== */
-.hero {
-    min-height: 85vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 1rem;
-    background: radial-gradient(circle at center, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    font-weight: 800;
-}
-
-.hero h1 span {
-    color: var(--primary-color);
-}
-
-.hero p {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    max-width: 600px;
-    margin-bottom: 2rem;
-}
-
-/* BUTTONS (बटन स्टाइल्स) */
-.btn-container {
-    display: flex;
-    gap: 1rem;
-}
-
-.btn {
-    display: inline-block;
-    padding: 0.75rem 2rem;
-    border-radius: 8px;
     font-weight: 600;
-    text-decoration: none;
-    transition: var(--transition-fast);
-    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
 }
 
-.btn-primary {
-    background-color: var(--primary-color);
-    color: #fff;
+nav ul li a:hover, nav ul li a.active {
+    background-color: white;
+    color: #ff4757;
 }
 
-.btn-primary:hover {
-    background-color: var(--secondary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
-}
-
-.btn-secondary {
-    border: 2px solid var(--text-muted);
-    color: var(--text-main);
-}
-
-.btn-secondary:hover {
-    border-color: var(--text-main);
-    background-color: rgba(255, 255, 255, 0.05);
-    transform: translateY(-2px);
-}
-
-/* ==========================================================================
-   4. CARDS / PROJECTS SECTION (प्रोजेक्ट्स ग्रिड)
-   ========================================================================== */
-.container {
-    max-width: 1200px;
-    margin: 5rem auto;
-    padding: 0 2rem;
-}
-
-.section-title {
+/* Hero Content */
+.hero {
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 3rem;
-    position: relative;
+    padding: 100px 20px;
+    flex: 1;
 }
 
-.section-title::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 4px;
-    background-color: var(--primary-color);
-    margin: 10px auto 0;
-    border-radius: 2px;
+h1 {
+    font-family: 'Comic Neue', cursive;
+    font-size: 3.5rem;
+    color: #2f3542;
+    margin-bottom: 20px;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #57606f;
+}
+
+.cta-box {
+    background: white;
+    display: inline-block;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.cta-box h3 {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+/* Funny Button */
+.funny-btn {
+    background-color: #2ed573;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.funny-btn:hover {
+    transform: scale(1.1) rotate(2deg);
+    background-color: #26af5f;
+}
+
+/* About Page Styles */
+.about-section {
+    text-align: center;
+    padding: 60px 20px;
+    flex: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.team-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0;
+    gap: 20px;
 }
 
 .card {
-    background-color: var(--bg-card);
-    border-radius: 12px;
-    padding: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: var(--transition-fast);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    flex: 1;
+    border-top: 5px solid #ffa502;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(37, 99, 235, 0.3);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+.back-btn {
+    display: inline-block;
+    margin-top: 30px;
+    color: #ff4757;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.card h3 {
-    margin-bottom: 0.75rem;
-    color: var(--text-main);
-}
-
-.card p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-}
-
-/* ==========================================================================
-   5. RESPONSIVE DESIGN (मोबाइल के लिए अनुकूल)
-   ========================================================================== */
-@media (max-width: 768px) {
-    .navbar {
-        padding: 1rem 5%;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .nav-links {
-        gap: 1.5rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .btn-container {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .btn {
-        text-align: center;
-        width: 100%;
-    }
+/* Footer */
+footer {
+    background-color: #2f3542;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
 }
