@@ -1,83 +1,333 @@
-DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pawan Coder - Premium Solutions</title>
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
-body { background-color: #0f172a; color: #f8fafc; line-height: 1.6; }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-header { background: rgba(15, 23, 42, 0.9); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid #1e293b; }
-.nav-container { display: flex; justify-content: space-between; align-items: center; height: 70px; }
-.logo { font-size: 24px; font-weight: bold; color: #38bdf8; text-decoration: none; }
-.nav-links a { color: #94a3b8; text-decoration: none; margin-left: 20px; }
-.hero { padding: 150px 0 80px 0; text-align: center; background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%); }
-.hero h1 { font-size: 36px; margin-bottom: 20px; color: #38bdf8; }
-.hero p { font-size: 18px; color: #94a3b8; max-width: 600px; margin: 0 auto 30px auto; }
-.cta-btn { display: inline-block; background: linear-gradient(135deg, #38bdf8 0%, #4f46e5 100%); color: white; padding: 12px 30px; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 50px; text-align: center; }
-.features { padding: 60px 0; }
-.section-title { text-align: center; font-size: 28px; margin-bottom: 40px; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-.card { background-color: #1e293b; padding: 25px; border-radius: 12px; border: 1px solid #334155; }
-.card h3 { font-size: 20px; margin-bottom: 10px; color: #38bdf8; }
-.pricing { padding: 60px 0; background-color: #0b0f19; }
-.price-card { background: #1e293b; max-width: 400px; margin: 0 auto; padding: 30px; border-radius: 20px; text-align: center; border: 2px solid #4f46e5; }
-.price { font-size: 36px; font-weight: bold; color: #38bdf8; margin: 15px 0; text-decoration: none; display: block; }
-.price-features { list-style: none; margin-bottom: 25px; text-align: left; color: #94a3b8; }
-.price-features li { margin-bottom: 10px; }
-footer { padding: 30px 0; text-align: center; border-top: 1px solid #1e293b; color: #64748b; font-size: 14px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawan Coder - Premium Solutions</title>
+    <style>
+        /* ==========================================================================
+           1. RESET & BASE STYLES
+           ========================================================================== */
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        }
+        
+        html {
+            scroll-behavior: smooth; /* स्मूथ स्क्रॉलिंग के लिए */
+        }
+
+        body { 
+            background-color: #0f172a; 
+            color: #f8fafc; 
+            line-height: 1.6; 
+        }
+
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+
+        /* ==========================================================================
+           2. HEADER & NAVIGATION
+           ========================================================================== */
+        header { 
+            background: rgba(15, 23, 42, 0.85); 
+            backdrop-filter: blur(12px); /* मॉडर्न ब्लर इफ़ेक्ट */
+            -webkit-backdrop-filter: blur(12px);
+            position: fixed; 
+            width: 100%; 
+            top: 0; 
+            z-index: 1000; 
+            border-bottom: 1px solid rgba(30, 41, 59, 0.7); 
+        }
+
+        .nav-container { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            height: 70px; 
+        }
+
+        .logo { 
+            font-size: 24px; 
+            font-weight: bold; 
+            color: #38bdf8; 
+            text-decoration: none; 
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.03);
+        }
+
+        .nav-links a { 
+            color: #94a3b8; 
+            text-decoration: none; 
+            font-weight: 500;
+            padding: 8px 16px;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            transition: all 0.3s ease; 
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+            border-color: rgba(56, 189, 248, 0.3);
+            background: rgba(56, 189, 248, 0.05);
+        }
+
+        /* ==========================================================================
+           3. HERO SECTION
+           ========================================================================== */
+        .hero { 
+            padding: 180px 0 100px 0; 
+            text-align: center; 
+            background: radial-gradient(circle at top, rgba(56, 189, 248, 0.15) 0%, #0f172a 70%); 
+        }
+
+        .hero h1 { 
+            font-size: 44px; 
+            font-weight: 800;
+            margin-bottom: 20px; 
+            color: #f8fafc;
+            background: linear-gradient(to right, #ffffff, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p { 
+            font-size: 19px; 
+            color: #94a3b8; 
+            max-width: 650px; 
+            margin: 0 auto 35px auto; 
+            padding: 0 10px;
+        }
+
+        /* BUTTONS */
+        .cta-btn { 
+            display: inline-block; 
+            background: linear-gradient(135deg, #38bdf8 0%, #4f46e5 100%); 
+            color: white; 
+            padding: 14px 35px; 
+            font-size: 18px; 
+            font-weight: bold; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            text-align: center; 
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.25);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.45);
+        }
+
+        /* ==========================================================================
+           4. FEATURES SECTION
+           ========================================================================== */
+        .features { 
+            padding: 80px 0; 
+        }
+
+        .section-title { 
+            text-align: center; 
+            font-size: 32px; 
+            font-weight: 700;
+            margin-bottom: 50px; 
+            color: #f8fafc;
+        }
+
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 25px; 
+        }
+
+        .card { 
+            background-color: #1e293b; 
+            padding: 30px; 
+            border-radius: 16px; 
+            border: 1px solid #334155; 
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.05);
+        }
+
+        .card h3 { 
+            font-size: 22px; 
+            margin-bottom: 12px; 
+            color: #38bdf8; 
+        }
+
+        .card p {
+            color: #94a3b8;
+        }
+
+        /* ==========================================================================
+           5. PRICING SECTION
+           ========================================================================== */
+        .pricing { 
+            padding: 80px 0; 
+            background-color: #0b0f19; 
+        }
+
+        .price-card { 
+            background: #1e293b; 
+            max-width: 420px; 
+            margin: 0 auto; 
+            padding: 40px 30px; 
+            border-radius: 24px; 
+            text-align: center; 
+            border: 2px solid #4f46e5; 
+            box-shadow: 0 15px 35px rgba(79, 70, 229, 0.15);
+            transition: transform 0.3s ease;
+        }
+        
+        .price-card:hover {
+            transform: scale(1.02);
+        }
+
+        .price-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .price { 
+            font-size: 42px; 
+            font-weight: 800; 
+            color: #38bdf8; 
+            margin: 20px 0; 
+            text-decoration: none; 
+            display: inline-block; 
+            transition: color 0.3s ease;
+        }
+
+        .price:hover {
+            color: #60a5fa;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+        }
+
+        .price-features { 
+            list-style: none; 
+            margin: 15px 0 35px 0; 
+            text-align: left; 
+            color: #94a3b8; 
+            padding-left: 10px;
+        }
+
+        .price-features li { 
+            margin-bottom: 14px; 
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* ==========================================================================
+           6. FOOTER & RESPONSIVENESS
+           ========================================================================== */
+        footer { 
+            padding: 40px 0; 
+            text-align: center; 
+            border-top: 1px solid #1e293b; 
+            color: #64748b; 
+            font-size: 14px; 
+        }
+
+        /* RESPONSIVE MEDIA QUERIES (मोबाइल फ्रेंडली सेटिंग्स) */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 140px 0 60px 0;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+            .section-title {
+                font-size: 26px;
+            }
+            .nav-container {
+                padding: 0 10px;
+            }
+            .logo {
+                font-size: 20px;
+            }
+            .nav-links a {
+                padding: 6px 12px;
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 <body>
-<header>
-<div class="container nav-container">
-<a href="#" class="logo">Pawan Coder</a>
-<nav class="nav-links">
-<a href="https://wa.me/91XXXXXXXXXX" target="_blank">संपर्क करें</a>
-</nav>
-</div>
-</header>
-<section class="hero">
-<div class="container">
-<h1>अपने बिज़नेस को डिजिटल बनाएं</h1>
-<p>हम आपके लिए बनाते हैं हाई-स्पीड, मॉडर्न और रेडी-टू-स्केल वेब एप्लिकेशन्स जो आपकी सेल्स को बढ़ा देंगे।</p>
-<a href="#pricing" class="cta-btn">अभी शुरू करें</a>
-</div>
-</section>
-<section class="features">
-<div class="container">
-<h2 class="section-title">हम क्या प्रदान करते हैं?</h2>
-<div class="grid">
-<div class="card">
-<h3>⚡ सुपर फ़ास्ट स्पीड</h3>
-<p>हमारी बनाई वेबसाइट्स बहुत तेजी से लोड होती हैं, जिससे आपका एक भी कस्टमर मिस न हो।</p>
-</div>
-<div class="card">
-<h3>📱 मोबाइल फ्रेंडली</h3>
-<p>हर मोबाइल और पीसी की स्क्रीन पर एकदम परफेक्ट दिखने वाला रिस्पॉन्सिव डिज़ाइन।</p>
-</div>
-</div>
-</div>
-</section>
-<section id="pricing" class="pricing">
-<div class="container">
-<h2 class="section-title">बेस्ट और सिंपल प्लान</h2>
-<div class="price-card">
-<h3>प्रीमियम वेब सर्विस</h3>
-<!-- अब ₹4,999 पर क्लिक करने से भी व्हाट्सएप खुलेगा -->
-<a href="https://wa.me/918889270070?text=Hi, I am interested in your 9999 plan." target="_blank" class="price">₹4,999</a>
-<ul class="price-features">
-<li>✓ Custom Website Design</li>
-<li>✓ Free Domain & Hosting Setup</li>
-<li>✓ 1 Year Free Support</li>
-</ul>
-<a href="https://wa.me/918889270070?text=Hi, I am interested." target="_blank" class="cta-btn">ऑर्डर बुक करें</a>
-</div>
-</div>
-</section>
-<footer>
-<p>&copy; 2026 Pawan Coder. सर्वाधिकार सुरक्षित।</p>
-</footer>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">Pawan Coder</a>
+            <nav class="nav-links">
+                <!-- व्हाट्सएप लिंक को सक्रिय रखने के लिए यहाँ वास्तविक नंबर डाल सकते हैं -->
+                <a href="https://wa.me/918889270070" target="_blank">संपर्क करें</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>अपने बिज़नेस को डिजिटल बनाएं</h1>
+            <p>हम आपके लिए बनाते हैं हाई-स्पीड, मॉडर्न और रेडी-टू-स्केल वेब एप्लिकेशन्स जो आपकी सेल्स को बढ़ा देंगे।</p>
+            <a href="#pricing" class="cta-btn">अभी शुरू करें</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">हम क्या प्रदान करते हैं?</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>⚡ सुपर फ़ास्ट स्पीड</h3>
+                    <p>हमारी बनाई वेबसाइट्स बहुत तेजी से लोड होती हैं, जिससे आपका एक भी कस्टमर मिस न हो।</p>
+                </div>
+                <div class="card">
+                    <h3>📱 मोबाइल फ्रेंडली</h3>
+                    <p>हर मोबाइल और पीसी की स्क्रीन पर एकदम परफेक्ट दिखने वाला रिस्पॉन्सिव डिज़ाइन।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">बेस्ट और सिंपल प्लान</h2>
+            <div class="price-card">
+                <h3>प्रीमियम वेब सर्विस</h3>
+                <a href="https://wa.me/918889270070?text=Hi,%20I%20am%20interested%20in%20your%204999%20plan." target="_blank" class="price">₹4,999</a>
+                <ul class="price-features">
+                    <li><span>✓</span> Custom Website Design</li>
+                    <li><span>✓</span> Free Domain & Hosting Setup</li>
+                    <li><span>✓</span> 1 Year Free Support</li>
+                </ul>
+                <a href="https://wa.me/918889270070?text=Hi,%20I%20am%20interested." target="_blank" class="cta-btn">ऑर्डर बुक करें</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Pawan Coder. सर्वाधिकार सुरक्षित।</p>
+        </div>
+    </footer>
+
 </body>
-</html
+</html>
